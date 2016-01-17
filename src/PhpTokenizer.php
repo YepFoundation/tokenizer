@@ -1,6 +1,12 @@
 <?php
 namespace Yep\Tokenizer;
 
+!defined('T_POW') && define('T_POW', 1001);
+!defined('T_ELLIPSIS') && define('T_ELLIPSIS', 1002);
+!defined('T_POW_EQUAL') && define('T_POW_EQUAL', 1003);
+!defined('T_CHARACTER') && define('T_CHARACTER', 1004);
+!defined('T_BAD_CHARACTER') && define('T_BAD_CHARACTER', 1005);
+
 class PhpTokenizer implements ITokenizer {
 	const
 		TOKEN_UNKNOWN = null,

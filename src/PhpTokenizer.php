@@ -40,7 +40,7 @@ class PhpTokenizer implements ITokenizer {
 		$tokens = [];
 
 		foreach ($php_tokens as $php_token_i => $php_token) {
-			$token[self::POSITION] = $php_token_i;
+			$token = [self::POSITION => $php_token_i];
 
 			if (!is_array($php_token)) {
 				$token[self::TYPE] = self::TOKEN_UNKNOWN;

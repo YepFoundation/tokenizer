@@ -72,7 +72,7 @@ class TokenizerTest extends PHPUnit_Framework_TestCase {
 	/**
 	 * @expectedException \Yep\Tokenizer\UnexpectedTokenException
 	 */
-	public function testTokenizer() {
+	public function testTokenizerWithUnexpectedTokenException() {
 		$tokenizer = new Tokenizer(
 			[
 				'TOKEN_UPPER' => '[A-Z]+',

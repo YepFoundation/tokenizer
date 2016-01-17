@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="robots" content="noindex">
+
+	<title>File PhpTokenizer.php</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li>
+					<a href="namespace-Yep.html">
+						Yep<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-Yep.Tokenizer.html">
+						Tokenizer					</a>
+
+						</li>
+							</ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-Yep.Tokenizer.PhpTokenizer.html">Yep\Tokenizer\PhpTokenizer</a></li>
+				<li><a href="class-Yep.Tokenizer.TokenIterator.html">Yep\Tokenizer\TokenIterator</a></li>
+				<li><a href="class-Yep.Tokenizer.Tokenizer.html">Yep\Tokenizer\Tokenizer</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-Yep.Tokenizer.ITokenizer.html">Yep\Tokenizer\ITokenizer</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-Yep.Tokenizer.UnexpectedTokenException.html">Yep\Tokenizer\UnexpectedTokenException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+<span>Namespace</span>			</li>
+			<li>
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<pre><code><span id="1" class="l"><a href="#1"> 1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a href="#2"> 2: </a><span class="php-keyword1">namespace</span> Yep\Tokenizer;
+</span><span id="3" class="l"><a href="#3"> 3: </a>
+</span><span id="4" class="l"><a href="#4"> 4: </a><span class="php-keyword1">class</span> PhpTokenizer <span class="php-keyword1">implements</span> ITokenizer {
+</span><span id="5" class="l"><a href="#5"> 5: </a>    <span class="php-keyword1">const</span>
+</span><span id="6" class="l"><a href="#6"> 6: </a>        TOKEN_UNKNOWN = <span class="php-keyword1">null</span>,
+</span><span id="7" class="l"><a href="#7"> 7: </a>        TOKEN_POW = T_POW, TOKEN_ELLIPSIS = T_ELLIPSIS, TOKEN_POW_EQUAL = T_POW_EQUAL, TOKEN_REQUIRE_ONCE = T_REQUIRE_ONCE, TOKEN_REQUIRE = T_REQUIRE, TOKEN_EVAL = T_EVAL,
+</span><span id="8" class="l"><a href="#8"> 8: </a>        TOKEN_INCLUDE_ONCE = T_INCLUDE_ONCE, TOKEN_INCLUDE = T_INCLUDE, TOKEN_LOGICAL_OR = T_LOGICAL_OR, TOKEN_LOGICAL_XOR = T_LOGICAL_XOR, TOKEN_LOGICAL_AND = T_LOGICAL_AND,
+</span><span id="9" class="l"><a href="#9"> 9: </a>        TOKEN_PRINT = T_PRINT, TOKEN_SR_EQUAL = T_SR_EQUAL, TOKEN_SL_EQUAL = T_SL_EQUAL, TOKEN_XOR_EQUAL = T_XOR_EQUAL, TOKEN_OR_EQUAL = T_OR_EQUAL, TOKEN_AND_EQUAL = T_AND_EQUAL,
+</span><span id="10" class="l"><a href="#10">10: </a>        TOKEN_MOD_EQUAL = T_MOD_EQUAL, TOKEN_CONCAT_EQUAL = T_CONCAT_EQUAL, TOKEN_DIV_EQUAL = T_DIV_EQUAL, TOKEN_MUL_EQUAL = T_MUL_EQUAL, TOKEN_MINUS_EQUAL = T_MINUS_EQUAL,
+</span><span id="11" class="l"><a href="#11">11: </a>        TOKEN_PLUS_EQUAL = T_PLUS_EQUAL, TOKEN_BOOLEAN_OR = T_BOOLEAN_OR, TOKEN_BOOLEAN_AND = T_BOOLEAN_AND, TOKEN_IS_NOT_IDENTICAL = T_IS_NOT_IDENTICAL, TOKEN_IS_IDENTICAL = T_IS_IDENTICAL,
+</span><span id="12" class="l"><a href="#12">12: </a>        TOKEN_IS_NOT_EQUAL = T_IS_NOT_EQUAL, TOKEN_IS_EQUAL = T_IS_EQUAL, TOKEN_IS_GREATER_OR_EQUAL = T_IS_GREATER_OR_EQUAL, TOKEN_IS_SMALLER_OR_EQUAL = T_IS_SMALLER_OR_EQUAL, TOKEN_SR = T_SR,
+</span><span id="13" class="l"><a href="#13">13: </a>        TOKEN_SL = T_SL, TOKEN_INSTANCEOF = T_INSTANCEOF, TOKEN_UNSET_CAST = T_UNSET_CAST, TOKEN_BOOL_CAST = T_BOOL_CAST, TOKEN_OBJECT_CAST = T_OBJECT_CAST, TOKEN_ARRAY_CAST = T_ARRAY_CAST,
+</span><span id="14" class="l"><a href="#14">14: </a>        TOKEN_STRING_CAST = T_STRING_CAST, TOKEN_DOUBLE_CAST = T_DOUBLE_CAST, TOKEN_INT_CAST = T_INT_CAST, TOKEN_DEC = T_DEC, TOKEN_INC = T_INC, TOKEN_CLONE = T_CLONE, TOKEN_NEW = T_NEW,
+</span><span id="15" class="l"><a href="#15">15: </a>        TOKEN_EXIT = T_EXIT, TOKEN_IF = T_IF, TOKEN_ELSEIF = T_ELSEIF, TOKEN_ELSE = T_ELSE, TOKEN_ENDIF = T_ENDIF, TOKEN_LNUMBER = T_LNUMBER, TOKEN_DNUMBER = T_DNUMBER, TOKEN_STRING = T_STRING,
+</span><span id="16" class="l"><a href="#16">16: </a>        TOKEN_STRING_VARNAME = T_STRING_VARNAME, TOKEN_VARIABLE = T_VARIABLE, TOKEN_NUM_STRING = T_NUM_STRING, TOKEN_INLINE_HTML = T_INLINE_HTML, TOKEN_CHARACTER = T_CHARACTER,
+</span><span id="17" class="l"><a href="#17">17: </a>        TOKEN_BAD_CHARACTER = T_BAD_CHARACTER, TOKEN_ENCAPSED_AND_WHITESPACE = T_ENCAPSED_AND_WHITESPACE, TOKEN_CONSTANT_ENCAPSED_STRING = T_CONSTANT_ENCAPSED_STRING, TOKEN_ECHO = T_ECHO,
+</span><span id="18" class="l"><a href="#18">18: </a>        TOKEN_DO = T_DO, TOKEN_WHILE = T_WHILE, TOKEN_ENDWHILE = T_ENDWHILE, TOKEN_FOR = T_FOR, TOKEN_ENDFOR = T_ENDFOR, TOKEN_FOREACH = T_FOREACH, TOKEN_ENDFOREACH = T_ENDFOREACH,
+</span><span id="19" class="l"><a href="#19">19: </a>        TOKEN_DECLARE = T_DECLARE, TOKEN_ENDDECLARE = T_ENDDECLARE, TOKEN_AS = T_AS, TOKEN_SWITCH = T_SWITCH, TOKEN_ENDSWITCH = T_ENDSWITCH, TOKEN_CASE = T_CASE, TOKEN_DEFAULT = T_DEFAULT,
+</span><span id="20" class="l"><a href="#20">20: </a>        TOKEN_BREAK = T_BREAK, TOKEN_CONTINUE = T_CONTINUE, TOKEN_GOTO = T_GOTO, TOKEN_FUNCTION = T_FUNCTION, TOKEN_CONST = T_CONST, TOKEN_RETURN = T_RETURN, TOKEN_YIELD = T_YIELD,
+</span><span id="21" class="l"><a href="#21">21: </a>        TOKEN_TRY = T_TRY, TOKEN_CATCH = T_CATCH, TOKEN_FINALLY = T_FINALLY, TOKEN_THROW = T_THROW, TOKEN_USE = T_USE, TOKEN_INSTEADOF = T_INSTEADOF, TOKEN_GLOBAL = T_GLOBAL,
+</span><span id="22" class="l"><a href="#22">22: </a>        TOKEN_PUBLIC = T_PUBLIC, TOKEN_PROTECTED = T_PROTECTED, TOKEN_PRIVATE = T_PRIVATE, TOKEN_FINAL = T_FINAL, TOKEN_ABSTRACT = T_ABSTRACT, TOKEN_STATIC = T_STATIC, TOKEN_VAR = T_VAR,
+</span><span id="23" class="l"><a href="#23">23: </a>        TOKEN_UNSET = T_UNSET, TOKEN_ISSET = T_ISSET, TOKEN_EMPTY = T_EMPTY, TOKEN_HALT_COMPILER = T_HALT_COMPILER, TOKEN_CLASS = T_CLASS, TOKEN_TRAIT = T_TRAIT, TOKEN_INTERFACE = T_INTERFACE,
+</span><span id="24" class="l"><a href="#24">24: </a>        TOKEN_EXTENDS = T_EXTENDS, TOKEN_IMPLEMENTS = T_IMPLEMENTS, TOKEN_OBJECT_OPERATOR = T_OBJECT_OPERATOR, TOKEN_DOUBLE_ARROW = T_DOUBLE_ARROW, TOKEN_LIST = T_LIST, TOKEN_ARRAY = T_ARRAY,
+</span><span id="25" class="l"><a href="#25">25: </a>        TOKEN_CALLABLE = T_CALLABLE, TOKEN_CLASS_C = T_CLASS_C, TOKEN_TRAIT_C = T_TRAIT_C, TOKEN_METHOD_C = T_METHOD_C, TOKEN_FUNC_C = T_FUNC_C, TOKEN_LINE = T_LINE, TOKEN_FILE = T_FILE,
+</span><span id="26" class="l"><a href="#26">26: </a>        TOKEN_COMMENT = T_COMMENT, TOKEN_DOC_COMMENT = T_DOC_COMMENT, TOKEN_OPEN_TAG = T_OPEN_TAG, TOKEN_OPEN_TAG_WITH_ECHO = T_OPEN_TAG_WITH_ECHO, TOKEN_CLOSE_TAG = T_CLOSE_TAG,
+</span><span id="27" class="l"><a href="#27">27: </a>        TOKEN_WHITESPACE = T_WHITESPACE, TOKEN_START_HEREDOC = T_START_HEREDOC, TOKEN_END_HEREDOC = T_END_HEREDOC, TOKEN_DOLLAR_OPEN_CURLY_BRACES = T_DOLLAR_OPEN_CURLY_BRACES,
+</span><span id="28" class="l"><a href="#28">28: </a>        TOKEN_CURLY_OPEN = T_CURLY_OPEN, TOKEN_PAAMAYIM_NEKUDOTAYIM = T_PAAMAYIM_NEKUDOTAYIM, TOKEN_NAMESPACE = T_NAMESPACE, TOKEN_NS_C = T_NS_C, TOKEN_DIR = T_DIR,
+</span><span id="29" class="l"><a href="#29">29: </a>        TOKEN_NS_SEPARATOR = T_NS_SEPARATOR, TOKEN_DOUBLE_COLON = T_DOUBLE_COLON;
+</span><span id="30" class="l"><a href="#30">30: </a>
+</span><span id="31" class="l"><a href="#31">31: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> tokenize(<span class="php-var">$code</span>) {
+</span><span id="32" class="l"><a href="#32">32: </a>        <span class="php-var">$php_tokens</span> = <span class="php-keyword2">token_get_all</span>(<span class="php-var">$code</span>);
+</span><span id="33" class="l"><a href="#33">33: </a>        <span class="php-var">$length</span> = <span class="php-num">0</span>;
+</span><span id="34" class="l"><a href="#34">34: </a>        <span class="php-var">$tokens</span> = [];
+</span><span id="35" class="l"><a href="#35">35: </a>
+</span><span id="36" class="l"><a href="#36">36: </a>        <span class="php-keyword1">foreach</span> (<span class="php-var">$php_tokens</span> <span class="php-keyword1">as</span> <span class="php-var">$php_token_i</span> =&gt; <span class="php-var">$php_token</span>) {
+</span><span id="37" class="l"><a href="#37">37: </a>            <span class="php-var">$token</span>[self::POSITION] = <span class="php-var">$php_token_i</span>;
+</span><span id="38" class="l"><a href="#38">38: </a>
+</span><span id="39" class="l"><a href="#39">39: </a>            <span class="php-keyword1">if</span> (!<span class="php-keyword2">is_array</span>(<span class="php-var">$php_token</span>)) {
+</span><span id="40" class="l"><a href="#40">40: </a>                <span class="php-var">$token</span>[self::TYPE] = self::TOKEN_UNKNOWN;
+</span><span id="41" class="l"><a href="#41">41: </a>                <span class="php-var">$token</span>[self::VALUE] = <span class="php-var">$php_token</span>;
+</span><span id="42" class="l"><a href="#42">42: </a>            }
+</span><span id="43" class="l"><a href="#43">43: </a>            <span class="php-keyword1">else</span> {
+</span><span id="44" class="l"><a href="#44">44: </a>                <span class="php-var">$token</span>[self::TYPE] = <span class="php-var">$php_token</span>[<span class="php-num">0</span>];
+</span><span id="45" class="l"><a href="#45">45: </a>                <span class="php-var">$token</span>[self::VALUE] = <span class="php-var">$php_token</span>[<span class="php-num">1</span>];
+</span><span id="46" class="l"><a href="#46">46: </a>            }
+</span><span id="47" class="l"><a href="#47">47: </a>
+</span><span id="48" class="l"><a href="#48">48: </a>            <span class="php-var">$token</span>[self::OFFSET] = <span class="php-var">$length</span>;
+</span><span id="49" class="l"><a href="#49">49: </a>            <span class="php-var">$length</span> += <span class="php-var">$token</span>[self::LENGTH] = <span class="php-keyword2">mb_strlen</span>(<span class="php-var">$token</span>[self::VALUE]);
+</span><span id="50" class="l"><a href="#50">50: </a>
+</span><span id="51" class="l"><a href="#51">51: </a>            <span class="php-var">$tokens</span>[] = <span class="php-var">$token</span>;
+</span><span id="52" class="l"><a href="#52">52: </a>        }
+</span><span id="53" class="l"><a href="#53">53: </a>
+</span><span id="54" class="l"><a href="#54">54: </a>        <span class="php-keyword1">return</span> <span class="php-var">$tokens</span>;
+</span><span id="55" class="l"><a href="#55">55: </a>    }
+</span><span id="56" class="l"><a href="#56">56: </a>}
+</span><span id="57" class="l"><a href="#57">57: </a></span></code></pre>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js?ca4594398f5c3550fe436fcd7611b3570e47b32f"></script>
+<script src="elementlist.js?06eef5f8e13293fd6ecaec7ba28291ac308c8da2"></script>
+</body>
+</html>

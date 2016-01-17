@@ -149,7 +149,7 @@ class TokenIterator implements \Iterator, \SeekableIterator {
 		$found = [];
 
 		while ($token = $this->step($prev)) {
-			if ($tokens && (in_array($token[ITokenizer::TYPE], $tokens, true) || in_array($token[ITokenizer::VALUE], $tokens, true)) !== $expected) {
+			if (!empty($tokens) && (in_array($token[ITokenizer::TYPE], $tokens, true) || in_array($token[ITokenizer::VALUE], $tokens, true)) !== $expected) {
 				if ($only_first) {
 					continue;
 				}
